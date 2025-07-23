@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real>>>Dolar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h1>Conversor de Real <br>para Dolár</h1>
+            <input type="number" placeholder="Digite o valor em BRl" id="valor">
+            <span>
+                <button onclick="converter()">converter</button>
+            </span>
+            <p id="resultado">Resposta Aqui!</p>
+        </div>
+    </div>
+    <script>
+
+        function converter(){
+            const RealValor = document.querySelector("#valor")
+            const local = document.querySelector("#resultado")
+            const validacao = parseFloat(RealValor.value);
+            const TaxaDolar = 5.52
+            const changer = (validacao / TaxaDolar).toFixed(2);
+
+            local.textContent = `R$${validacao} é igual a: US$${changer}`
+}
+    </script>
+</body>
+</html>
